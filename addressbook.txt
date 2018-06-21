@@ -1,0 +1,5 @@
+Info about client:
+Name:Tarlan
+Surname:Askaruly
+Address:Astana city
+Phone Number:87019524349
