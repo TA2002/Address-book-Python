@@ -6,11 +6,10 @@
 #  Copyright (c) 2018 Tarlan Askaruly. All rights reserved.
 #
 
-def close_win(event):
+def close_win(event): 
     root.destroy()
-
-def writing(event):
-    if nameent.get() == "" or snameent.get() == "" or addressent.get() == "":
+def writing(event): 
+    if nameent.get() == "" or snameent.get() == "" or addressent.get() == "": 
         root3=Tk()
         Presencelab=Label(root3, text='Fill in the fields') 
         Presencelab.grid(row=1, column= 1)
@@ -18,7 +17,7 @@ def writing(event):
         file = open('addressbook.txt','r+') 
         file.write('Info about client:'+'\n') 
         file.write('Name:')
-        if nameent.get().isdigit() or snameent.get().isdigit() :
+        if nameent.get().isdigit() or snameent.get().isdigit() : 
             root5=Tk()
             Formatlab=Label(root5, text='Letters only') 
             Formatlab.grid(row=1, column= 1)
@@ -29,17 +28,16 @@ def writing(event):
         file.write('Address:') 
         file.write(addressent.get()+'\n') 
         file.write('Phone Number:')
-        if len(phoneent.get()) == 11 and phoneent.get().isdigit():
+        if len(phoneent.get()) == 11 and phoneent.get().isdigit(): 
             file.write(phoneent.get()+'\n')
         else :
             root4=Tk()
             Lengthlab=Label(root4, text='Phone number must contain exactly 11 numbers') 
             Lengthlab.grid(row=1, column= 1)
-        file.close()
-
-def search(event):
+        file.close() 
+def search(event): 
     def p(SEARCH): 
-        for i, line in enumerate(searchlines):
+        for i, line in enumerate(searchlines): 
             if searchent.get() in line: 
                 for l in searchlines[i:i+5]: 
                     search_r.insert(END, l) 
@@ -55,8 +53,7 @@ def search(event):
     searchingbut.grid(row=3,column=2) 
     searchingbut.bind("<Button-1>",p) 
     searchlines=s.readlines() 
-    s.close()
-
+    s.close() 
 from tkinter import* 
 root=Tk() 
 m = Menu(root) 
